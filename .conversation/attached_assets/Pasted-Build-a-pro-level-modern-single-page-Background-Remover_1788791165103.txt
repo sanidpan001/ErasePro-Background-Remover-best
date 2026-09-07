@@ -1,0 +1,33 @@
+Build a pro-level, modern, single-page Background Remover website named "ErasePro - Free Background Remover".
+
+CORE REQUIREMENT: 100% CLIENT-SIDE, NO API KEY NEEDED.
+Use npm package "@imgly/background-removal" or "imgly/background-removal" - it runs fully in browser using WASM. No premium, no backend. This is mandatory.
+
+DESIGN & UI (Premium & Simple like Apple):
+- Clean white background with subtle grid dots
+- Top Navbar: Left side Logo "ErasePro" with an eraser icon, Right side links: Home, Tools (dropdown), Contact. No Login/Signup button at all.
+- Hero Section: H1 - "Remove Background in 1 Click - Free, No Watermark". Subtitle - "100% Free, No Sign Up, No Watermark, Unlimited". 
+- Main Tool Area - Center Card:
+    - Big drag & drop area with dashed border. Text: "Drop image or Click to upload" + Supported: JPG, PNG, WEBP.
+    - After upload, show 2 side-by-side previews: LEFT - Original, RIGHT - BG Removed with transparent checkerboard background.
+    - One big Green button: "Download HD (PNG)" - direct download, no popup.
+    - Show "No Watermark, No Sign In Required" badge below button.
+- Features Section below tool: 3 cards - 1. 100% Free Forever, 2. No Watermark, 3. No Sign Up Needed - with icons.
+- AdSense Slots: Add 3 empty divs for ads with text "Ad Space" - Top (728x90), Sidebar (300x250), Bottom (728x90). Do not add real ad code, just placeholder divs with id="ad-top", "ad-sidebar", "ad-bottom".
+- Footer: Simple - © 2026 ErasePro - Privacy Policy, Terms - No subscription text anywhere.
+
+FUNCTIONALITY:
+1. On image upload, instantly start background removal using @imgly/background-removal library. Show loader "Erasing background... 0% to 100%".
+2. The result must be PNG with transparency.
+3. Download button downloads the result as "erasepro-removed.png".
+4. Must work on mobile and desktop. Must handle up to 10MB images.
+5. Do not add any watermark to output image. Do not ask for login. Do not add any premium lock or pricing page.
+
+SEO & TECH:
+- Next.js 14 with App Router and Tailwind CSS.
+- Page Title: "Free Background Remover - No Watermark, No Sign Up - ErasePro"
+- Meta Description: "Remove background from any image in 1 click. 100% free, no watermark, no sign up, unlimited. Works in browser."
+- The tool route should be / . So I can deploy it on my main domain as /erasepro subfolder.
+- Code must be production ready, no errors, deployable on Vercel.
+
+Make it look better than remove.bg - more minimal, faster, and clearly show "NO SIGN IN, NO WATERMARK, NO SUBSCRIPTION" trust badges near the upload box.

@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "ErasePro Background Remover"
+description = "A free, browser-only background remover that processes images locally with no sign-up, watermark, subscription, or API key."
+version = "1.0.0"
+id = "artifacts/erasepro"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22825
+
+[services.development]
+run = "pnpm --filter @workspace/erasepro run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/erasepro", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/erasepro/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22825"
+BASE_PATH = "/"
